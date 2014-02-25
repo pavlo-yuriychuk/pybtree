@@ -1,5 +1,5 @@
 
-class BinaryTreeNode:
+class TreeNode:
 
 	def __init__(self, value, left = None, right = None):
 		self.value = value
@@ -42,4 +42,5 @@ class BinaryTreeNode:
 		return result
 
 if __name__ == "__main__":
-	print BinaryTreeNode(0, BinaryTreeNode(1, BinaryTreeNode(5), BinaryTreeNode(6, BinaryTreeNode(7))), BinaryTreeNode(2, BinaryTreeNode(3), BinaryTreeNode(4))).to_list()
+	assert TreeNode(0, TreeNode(1, None, TreeNode(2)), TreeNode(3, TreeNode(4), TreeNode(5, TreeNode(6)))).to_list() == [[0], [1, 3], [2, 4, 5], [6]]
+	assert TreeNode(0, TreeNode(1, TreeNode(5), TreeNode(6, TreeNode(7))), TreeNode(2, TreeNode(3), TreeNode(4))).to_list() == [[], [1, 2], [5, 6, 3, 4], [7]]
